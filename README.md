@@ -4,7 +4,7 @@ In addition to messages, you can also catch "Follow", "Gift", "Host" and some ot
 
 ## How to use
 Since this is javascript, you need `nodejs` and `npm` installed.
-Create a folder and copy <a href="https://github.com/Mikulskii/Odysee-simplest-chat-logger/blob/main/dlive_chat_logger.js">`dlive_chat_logger.js`</a> to it.<p>
+Create a folder and copy <a href="https://github.com/Mikulskii/Dlive-simplest-chat-logger/blob/main/dlive_chat_logger.js">`dlive_chat_logger.js`</a> to it.<p>
 Being inside the newly created directory, you need to install the `ws` package:<p> 
 ```
 npm i ws
