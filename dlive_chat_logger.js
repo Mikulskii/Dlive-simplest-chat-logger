@@ -82,7 +82,7 @@ dlive.addEventListener('message', function (event) {
 
     //Chat Message
     if (msg?.type === "Message" && msg.__typename === 'ChatText') {
-    return    console.log(`${msg.sender.displayname: ${msg.content}`);
+    return    console.log(`${msg.sender.displayname} ${msg.content}`);
       }
     //Gift
     if (msg?.type === 'Gift' &&  msg.__typename === 'ChatGift') {
