@@ -113,4 +113,4 @@ dlive.addEventListener('message', function (event) {
 
   dlive.on("error", console.error);
 
-})
+});
