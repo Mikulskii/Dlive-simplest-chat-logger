@@ -108,6 +108,14 @@ dlive.addEventListener('message', function (event) {
     if (msg?.type === 'Delete' && msg?.__typename === 'ChatDelete') {
     return  console.log(`Message deleted ${msg.ids}`);
     }
+    //Stream Online
+    if (msg?.type === 'Live' && msg?.__typename === 'ChatLive') {
+    return  console.log(`Stream has started!`);
+    }
+    //Stream Offline
+    if (msg?.type === 'Offline' && msg?.__typename === 'ChatOffline') {
+    return  console.log(`Stream is over!`);
+    }
 
   });
 
