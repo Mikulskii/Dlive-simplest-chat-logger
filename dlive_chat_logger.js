@@ -69,9 +69,9 @@ dlive.on("open", function open() {
 });
 
 /// EVENTS
-dlive.addEventListener('message', function (event) {
+dlive.on('message', function (event) {
     
-    let data = JSON.parse(event.data);
+    let data = JSON.parse(event);
     if (data.type === "connection_ack") {
     return console.log(`Connected to Dlive ${streamer} chat`);
     }
@@ -81,11 +81,11 @@ dlive.addEventListener('message', function (event) {
     let msg = data.payload?.data?.streamMessageReceived[0];
 
     //Chat Message
-    if (msg?.type === "Message" && msg.__typename === 'ChatText') {
+    if (msg?.type === "Message" && msg?.__typename === 'ChatText') {
     return    console.log(`${msg.sender.displayname}: ${msg.content}`);
       }
     //Gift
-    if (msg?.type === 'Gift' &&  msg.__typename === 'ChatGift') {
+    if (msg?.type === 'Gift' &&  msg?.__typename === 'ChatGift') {
     return  console.log(`${msg.sender.displayname} gives ${msg.amount} ${msg.gift}`);
     }
     //Follow
@@ -93,15 +93,15 @@ dlive.addEventListener('message', function (event) {
     return  console.log(`${msg.sender.displayname} is now following!`);
     }
     //Host
-    if (msg?.type === 'Host' && msg.__typename === 'ChatHost') {
+    if (msg?.type === 'Host' && msg?.__typename === 'ChatHost') {
     return  console.log(`${msg.sender.displayname} hosts channel with ${msg.viewer} viewers!`);
     }
     //Moderator promotion
-    if (msg?.type === 'Mod' && msg.__typename === 'ChatModerator') {
+    if (msg?.type === 'Mod' && msg?.__typename === 'ChatModerator') {
     return  console.log(`${msg.sender.displayname} was promoted to ${msg.roomRole}`);
     }
     //Ban
-    if (msg?.type === 'Ban' && msg.__typename === 'ChatBan') {
+    if (msg?.type === 'Ban' && msg?.__typename === 'ChatBan') {
     return  console.log(`${msg.roomRole} '${msg.sender.displayname}' has been banned by ${msg.bannedBy.displayname}`);
     }
     //Message deleted
